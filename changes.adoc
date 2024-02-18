@@ -48,4 +48,7 @@ Additionally, the way these calls were written was causing many unnecessary oper
 
 |Made page title relevant to the page
 |This makes the page more user friendly as they can see what the page is while they are in another tab.
+
+|Changed text colour to be more visible against the squares
+|Increased contrast between the text and the background makes the values easier to read.
 |===
