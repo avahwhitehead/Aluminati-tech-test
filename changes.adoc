@@ -45,4 +45,7 @@ Additionally, the way these calls were written was causing many unnecessary oper
 
 |Scoped `style` tag
 |Styles should be limited to the defining component to reduce the possibility of conflicting with other stylings.
+
+|Made page title relevant to the page
+|This makes the page more user friendly as they can see what the page is while they are in another tab.
 |===
