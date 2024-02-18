@@ -1,31 +1,28 @@
 <script setup lang="ts">
-const numbers = [];
 let limit = 100;
 
-function n()
-{
-	let numbers = [];
-	for(var i = 0; i < limit; i++) { numbers = [...numbers, i]; }
+function n() {
+	let numbers: number[] = [];
+	for (let i = 0; i < limit; i++) {
+    numbers = [...numbers, i];
+  }
 
 	return numbers.sort(() => Math.random() - 0.5);
 }
 
-function hov(number) {
+function hov(number: number) {
   const nums = document.querySelectorAll('.number');
 
-  for(let i = 0; i < nums.length; i++)
-  {
+  for(let i = 0; i < nums.length; i++) {
     const num = nums[i].textContent.trim();
-    if(number % num === 0)
-    {
+    if (number % num === 0) {
       nums[i].classList.add('active')
       console.log('divisor', num)
     }
   }
 }
 
-function reset()
-{
+function reset() {
 	const nums = document.querySelectorAll('.number');
 	nums.forEach(num => num.classList.remove('active'))
 }

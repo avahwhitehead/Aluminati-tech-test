@@ -8,4 +8,12 @@
 |Removed HelloWorld.vue
 |This component is not used and is unrelated to the application.
 
+|Added type definition to `numbers` array
+|Unnecessary typing errors can mask genuine issues later on.
+
+|Made curly braces consistent between methods and loops
+|Consistent style makes code easier to read.
+
+|Changed a `var` declaration to `let`
+|The loop variable does not need to be declared as global scoped.
 |===
