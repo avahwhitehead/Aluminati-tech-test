@@ -24,7 +24,7 @@ function createAndShuffleNumbers(max: number): number[] {
 	//Create a list of numbers from 1 to 100 (inclusive) by doing the following:
 	//Create an empty array of length 100
 	//Then set each index's value to it's position in the list (1-indexed)
-	let arr = Array.from({ length: max }).map((_, i) => i + 1);
+	let arr = Array.from({ length: max }, (_, i) => i + 1);
 
 	//Randomise the order of the list
 	arr.sort(() => Math.random() - 0.5);
