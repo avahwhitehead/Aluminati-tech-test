@@ -69,7 +69,7 @@ function resetNumberSelection() {
 	</div>
 </template>
 
-<style>
+<style scoped lang="css">
 .number {
 	display: inline-block;
 	padding: 5px;

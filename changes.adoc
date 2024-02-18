@@ -42,4 +42,7 @@ Additionally, the way these calls were written was causing many unnecessary oper
 
 |Commented code and added jsdoc definitions to methods
 |Well commented code is more readable and easy to understand
+
+|Scoped `style` tag
+|Styles should be limited to the defining component to reduce the possibility of conflicting with other stylings.
 |===
