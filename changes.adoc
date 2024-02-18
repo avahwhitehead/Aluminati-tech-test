@@ -34,4 +34,7 @@
 |Removed `document.querySelectorAll` calls
 |Using Vue's built-in reactive state management makes the code easier to read and more performant.
 Additionally, the way these calls were written was causing many unnecessary operations to be performed.
+
+|Renamed methods to be more descriptive
+|Descriptive methods allow for more easily understandable code
 |===

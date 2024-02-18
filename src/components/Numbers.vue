@@ -25,11 +25,11 @@ watch(limit, (v) => {
 
 let selectedNumber = ref(-1);
 
-function hov(number: number) {
+function selectNumber(number: number) {
 	selectedNumber.value = number;
 }
 
-function reset() {
+function resetNumberSelection() {
 	selectedNumber.value = -1;
 }
 </script>
@@ -48,8 +48,8 @@ function reset() {
 				'number': true,
 				'active': (selectedNumber !== -1 && selectedNumber % number === 0)
         	}"
-			@mouseover="hov(number)"
-			@mouseout="reset"
+			@mouseover="selectNumber(number)"
+			@mouseout="resetNumberSelection"
 			v-text="number"
 		></div>
 	</div>
