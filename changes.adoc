@@ -19,4 +19,7 @@
 
 |Changed the `numbers` array definition
 |The previous way was creating 100 arrays in the process with a spread operator, which is an unnecessarily complex and resource intensive process.
+
+|Extracted `numbers` array creation out of a method
+|This produces cleaner, more readable, code and reduces the likelihood of future modifications triggering unexpected reordering.
 |===

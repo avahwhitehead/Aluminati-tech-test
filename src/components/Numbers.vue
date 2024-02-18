@@ -1,14 +1,13 @@
 <script setup lang="ts">
 let limit = 100;
 
-function n() {
-  //Create a list of numbers from 1 to 100 (inclusive)
-  //Create an empty array of length 100
-  //Then set each index's value to it's position in the list (1-indexed)
-	let numbers: number[] = Array.from({length: 100}).map((_, i) => i + 1);
+//Create a list of numbers from 1 to 100 (inclusive)
+//Create an empty array of length 100
+//Then set each index's value to it's position in the list (1-indexed)
+const numbers = Array.from({length: limit}).map((_, i) => i + 1);
 
-	return numbers.sort(() => Math.random() - 0.5);
-}
+//Randomise the order of the list
+numbers.sort(() => Math.random() - 0.5);
 
 function hov(number: number) {
   const nums = document.querySelectorAll('.number');
@@ -33,7 +32,7 @@ function reset() {
 		<input type="number" v-model="limit" /><br /><br />
 		<div class="number"
 			:id="'number-'+number"
-			v-for="number in n()"
+			v-for="number in numbers"
 			:key="number"
 			@mouseover="hov(number)"
 			@mouseout="reset"
