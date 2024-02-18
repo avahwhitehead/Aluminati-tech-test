@@ -12,7 +12,9 @@
 |Unnecessary typing errors can mask genuine issues later on.
 
 |Made curly braces consistent between methods and loops
-|Consistent style makes code easier to read.
+.2+|Consistent style makes code easier to read.
+
+|Ensured all lines end with a semicolon
 
 |Changed a `var` declaration to `let`
 |The loop variable does not need to be declared as global scoped
@@ -22,4 +24,14 @@
 
 |Extracted `numbers` array creation out of a method
 |This produces cleaner, more readable, code and reduces the likelihood of future modifications triggering unexpected reordering.
+
+|Removed unnecessary logging statement
+|The statement was unnecessary to the code execution and was just contributing to code clutter.
+
+|Changed to using `ref` and `watch` for rendering the numbers list
+|Using an explicit `watch` definition to trigger an update on the list makes the code clearer and easier to understand.
+
+|Removed `document.querySelectorAll` calls
+|Using Vue's built-in reactive state management makes the code easier to read and more performant.
+Additionally, the way these calls were written was causing many unnecessary operations to be performed.
 |===

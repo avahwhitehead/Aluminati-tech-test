@@ -1,44 +1,55 @@
 <script setup lang="ts">
-let limit = 100;
+import { ref, watch } from "vue";
 
-//Create a list of numbers from 1 to 100 (inclusive)
-//Create an empty array of length 100
-//Then set each index's value to it's position in the list (1-indexed)
-const numbers = Array.from({length: limit}).map((_, i) => i + 1);
+const limit = ref(100);
 
-//Randomise the order of the list
-numbers.sort(() => Math.random() - 0.5);
+const numbers = ref([] as number[]);
+
+createAndShuffleNumbers(limit.value);
+
+function createAndShuffleNumbers(max: number) {
+  //Create a list of numbers from 1 to 100 (inclusive) by doing the following:
+  //Create an empty array of length 100
+  //Then set each index's value to it's position in the list (1-indexed)
+  let arr = Array.from({length: max}).map((_, i) => i + 1);
+
+  //Randomise the order of the list
+  arr.sort(() => Math.random() - 0.5);
+
+  numbers.value = arr;
+}
+
+watch(limit, (v) => {
+  createAndShuffleNumbers(v);
+});
+
+let selectedNumber = ref(-1);
 
 function hov(number: number) {
-  const nums = document.querySelectorAll('.number');
-
-  for(let i = 0; i < nums.length; i++) {
-    const num = nums[i].textContent.trim();
-    if (number % num === 0) {
-      nums[i].classList.add('active')
-      console.log('divisor', num)
-    }
-  }
+  selectedNumber.value = number;
 }
 
 function reset() {
-	const nums = document.querySelectorAll('.number');
-	nums.forEach(num => num.classList.remove('active'))
+  selectedNumber.value = -1;
 }
 </script>
 
 <template>
 	<div>
-		<input type="number" v-model="limit" /><br /><br />
-		<div class="number"
-			:id="'number-'+number"
-			v-for="number in numbers"
-			:key="number"
-			@mouseover="hov(number)"
-			@mouseout="reset"
-		>
-			{{ number }}
-		</div>
+		<input type="number" v-model="limit" />
+    <br />
+    <br />
+		<div
+        v-for="number in numbers"
+        :key="number"
+        :class="{
+          'number': true,
+          'active': (selectedNumber !== -1 && selectedNumber % number === 0)
+        }"
+        @mouseover="hov(number)"
+        @mouseout="reset"
+        v-text="number"
+		></div>
 	</div>
 </template>
 
