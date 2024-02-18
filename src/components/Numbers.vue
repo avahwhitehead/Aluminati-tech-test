@@ -63,7 +63,7 @@ function resetNumberSelection() {
 				'active': (selectedNumber !== -1 && selectedNumber % number === 0)
         	}"
 			@mouseover="selectNumber(number)"
-			@mouseout="resetNumberSelection"
+			@mouseout="resetNumberSelection()"
 			v-text="number"
 		></div>
 	</div>
