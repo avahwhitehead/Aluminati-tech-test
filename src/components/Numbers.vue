@@ -2,10 +2,10 @@
 let limit = 100;
 
 function n() {
-	let numbers: number[] = [];
-	for (let i = 0; i < limit; i++) {
-    numbers = [...numbers, i];
-  }
+  //Create a list of numbers from 1 to 100 (inclusive)
+  //Create an empty array of length 100
+  //Then set each index's value to it's position in the list (1-indexed)
+	let numbers: number[] = Array.from({length: 100}).map((_, i) => i + 1);
 
 	return numbers.sort(() => Math.random() - 0.5);
 }

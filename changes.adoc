@@ -15,5 +15,8 @@
 |Consistent style makes code easier to read.
 
 |Changed a `var` declaration to `let`
-|The loop variable does not need to be declared as global scoped.
+|The loop variable does not need to be declared as global scoped
+
+|Changed the `numbers` array definition
+|The previous way was creating 100 arrays in the process with a spread operator, which is an unnecessarily complex and resource intensive process.
 |===
