@@ -1,13 +1,26 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 
+//The maximum number in the list
 const limit = ref(100);
 
-const numbers = ref([] as number[]);
+//The selected number
+//From which to get the factors
+const selectedNumber = ref(-1);
 
-createAndShuffleNumbers(limit.value);
+//The shuffled array of numbers up to `limit`
+const numbers = ref(createAndShuffleNumbers(limit.value));
 
-function createAndShuffleNumbers(max: number) {
+//Regenerate and shuffle the list of numbers when the limit is updated
+watch(limit, (v) => {
+	numbers.value = createAndShuffleNumbers(v);
+});
+
+/**
+ * Create an array of numbers in the range 1..max (inclusive) and return it shuffled in a random order.
+ * @param max The largest value to include in the array
+ */
+function createAndShuffleNumbers(max: number): number[] {
 	//Create a list of numbers from 1 to 100 (inclusive) by doing the following:
 	//Create an empty array of length 100
 	//Then set each index's value to it's position in the list (1-indexed)
@@ -16,19 +29,20 @@ function createAndShuffleNumbers(max: number) {
 	//Randomise the order of the list
 	arr.sort(() => Math.random() - 0.5);
 
-	numbers.value = arr;
+	return arr;
 }
 
-watch(limit, (v) => {
-	createAndShuffleNumbers(v);
-});
-
-let selectedNumber = ref(-1);
-
+/**
+ * Update the value used to determine the factors.
+ * @param number	The number to select
+ */
 function selectNumber(number: number) {
 	selectedNumber.value = number;
 }
 
+/**
+ * Clear the number selection
+ */
 function resetNumberSelection() {
 	selectedNumber.value = -1;
 }

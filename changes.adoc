@@ -12,9 +12,11 @@
 |Unnecessary typing errors can mask genuine issues later on.
 
 |Made curly braces consistent between methods and loops
-.2+|Consistent style makes code easier to read.
+.3+|Consistent style makes code easier to read.
 
 |Ensured all lines end with a semicolon
+
+|Converted spacing to tabs
 
 |Changed a `var` declaration to `let`
 |The loop variable does not need to be declared as global scoped
@@ -37,4 +39,7 @@ Additionally, the way these calls were written was causing many unnecessary oper
 
 |Renamed methods to be more descriptive
 |Descriptive methods allow for more easily understandable code
+
+|Commented code and added jsdoc definitions to methods
+|Well commented code is more readable and easy to understand
 |===
