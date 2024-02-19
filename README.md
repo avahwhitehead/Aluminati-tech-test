@@ -8,6 +8,10 @@ The provided code is functional, but it's got some issues that need to be resolv
 
 Improve the code how you see fit - please leave comments to justify your decisions.
 
+---
+
+My changes have been described in [changes.adoc](changes.adoc) and in the git commit log.
+
 ## GitHub Pull Requests
 
 This is an interview task sent to prospective candidates to work at Aluminati. As such, all pull requests will be rejected. This code is, by its very nature, purposely designed with issues that candiates are asked to review!
